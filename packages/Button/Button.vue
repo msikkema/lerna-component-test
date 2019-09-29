@@ -1,5 +1,9 @@
 <template>
-  <div :class="overrideStyle || cx(primary, extendStyle)">
+  <div
+    :class="overrideStyle || cx(primary, extendStyle)"
+    v-on="$listeners"
+    v-bind="$attrs"
+  >
     <slot />
     {{ hasSlot ? '' : label }}
   </div>
