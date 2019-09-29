@@ -3,5 +3,9 @@
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "emotion": "^10.0.17",
+    "polished": "^3.4.1"
   }
 }

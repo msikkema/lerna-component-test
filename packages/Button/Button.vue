@@ -1,9 +1,58 @@
 <template>
-  <h1>This is the Button Component</h1>
+  <div :class="overrideStyle || cx(primary, extendStyle)">
+    <slot />
+    {{ hasSlot ? '' : label }}
+  </div>
 </template>
 
 <script>
+import { css, cx } from 'emotion';
+
+const primary = css`
+  label: ro-button;
+  display: inline-block;
+  background-color: #FFEF5E;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export default {
-  name: 'Button'
+  name: 'Button',
+  props: {
+    label: {
+      type: String,
+      default: 'ReachOut Button'
+    },
+    type: {
+      type: String,
+      default: 'primary'
+    },
+    extendStyle: {
+      type: String,
+      default: ''
+    },
+    overrideStyle: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      primary
+    }
+  },
+  methods: {
+    cx
+  },
+  computed: {
+    hasSlot() {
+      return !!this.$slots.default
+    }
+  }
 }
 </script>

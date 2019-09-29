@@ -14,10 +14,13 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "emotion": "^10.0.17",
+    "polished": "^3.4.1",
     "vue": "^2.6.10"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
-  }
+  },
+  "peerDependencies": {}
 }
